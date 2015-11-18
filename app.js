@@ -21,8 +21,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname+'/views/share.html'));
+app.get('/wx', function (req, res) {
+  res.sendFile(path.join(__dirname+'/views/share-wx.html'));
+});
+app.get('/app', function (req, res) {
+  res.sendFile(path.join(__dirname+'/views/share-app.html'));
+});
+app.get('/detail', function (req, res) {
+  res.sendFile(path.join(__dirname+'/views/detail.html'));
 });
 
 // catch 404 and forward to error handler

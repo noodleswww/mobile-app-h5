@@ -23,13 +23,12 @@
     <meta name="apple-mobile-web-app-title" content=""/>
     <title>这是一个咨询，类似。。。。。。。</title>
 
-    <link rel="stylesheet" href="stylesheets/norimalized.css">
     <link rel="stylesheet" href="stylesheets/style.css">
 </head>
 <body>
 <div class="share-container">
     <!-- 顶部banner图片 -->
-    <div class="logo-img"><img src="images/banner.png" /></div>
+    <div class="logo-img"><img src="images/banner.png"/></div>
 
     <!-- 描述 -->
     <p>这是正文，可以上传图片，后台支持图文编辑，图片高度和宽度需要固定，分享到微信后展示形式不变。</p>
@@ -43,6 +42,7 @@
 
     <div id="target1">
         <p class="nav-title">活动概要</p>
+
         <p><span>活动性质：微讲座</span><br/>
             同学你好！新西兰留学政策宽松，申请比较容易。可零语言入读。另外新西兰是移民国家，学生在新西兰读完书之后可获得工作签证，有移民的机会。更重要的是，留学新西兰的费用在众多国家当中算比较便宜的，一年生活费加...
         </p>
@@ -50,8 +50,10 @@
     <hr/>
     <div id="target2">
         <p class="nav-title">嘉宾介绍</p>
-        <p>        <img src="images/people.png"/>
+
+        <p><img src="images/people.png"/>
         </p>
+
         <p>
             同学你好！新西兰留学政策宽松，申请比较容易。可零语言入读。另外新西兰是移民国家，学生在新西兰读完书之后可获得工作签证，有移民的机会。更重要的是，留学新西兰的费用在众多国家当中算比较便宜的，一年生活费加...
         </p>
@@ -59,6 +61,7 @@
     <hr/>
     <div id="target3">
         <p class="nav-title">时间地点</p>
+
         <p><span>活动时间：2015年1月1日</span><br/>
             <span>活动地点：北京</span>
         </p>
@@ -66,24 +69,72 @@
     <hr/>
     <div id="target4">
         <p class="nav-title">总结分享</p>
+
         <p>总结分享总结分享总结分享总结分享总结分享总结分享总结分享总结分享总结分享</p>
     </div>
-    <div class="share-wrap"><button class="share-btn">分享微信，立即报名</button></div>
+    <div class="share-wrap">
+        <button class="share-btn">分享微信，立即报名</button>
+    </div>
 </div>
 <script>
+
     ~function () {
-        var navs = document.getElementsByTagName('li');
-        var initialLi = navs[0];
-        for(var i= 0,len=navs.length;i<len;i++){
-            +function (idx) {
-                navs[idx].children[0].addEventListener('click', function (evt) {
-                    evt.stopPropagation();
-                    initialLi.children[0].className='';
-                    evt.target.className = 'share-initial-red';
-                    initialLi = evt.target.parentNode;
-                });
-            }(i);
-        }
+        window.onload = function () {
+            var target1Distance = document.getElementById('target1').offsetTop;
+            var target2Distance = document.getElementById('target2').offsetTop;
+            var target3Distance = document.getElementById('target3').offsetTop;
+            var target4Distance = document.getElementById('target4').offsetTop;
+
+            //scroll
+            function globalScroll(instance){
+                var winY =window.scrollY;
+                function scrollY(inc){
+                    winY+=inc;
+                    window.scrollTo(0,winY);
+                }
+
+                var cc = setInterval(function () {
+                    scrollY(30);
+                    if(winY>instance-30) {
+                        clearInterval(cc);
+                    }
+                },10);
+            }
+
+            var navs = document.getElementsByTagName('li');
+            var initialLi = navs[0];
+            for (var i = 0, len = navs.length; i < len; i++) {
+                +function (idx) {
+                    navs[idx].children[0].addEventListener('click', function (evt) {
+                        evt.preventDefault();
+                        evt.stopPropagation();
+                        var targetEle = evt.target;
+                        initialLi.children[0].className = '';
+                        evt.target.className = 'share-initial-red';
+                        initialLi = evt.target.parentNode;
+
+                        var hash = targetEle.hash;
+                        if(hash==='#target1'){
+                            globalScroll(target1Distance);
+                        }else if(hash==='#target2'){
+                            globalScroll(target2Distance);
+                        }else if(hash==='#target3'){
+                            globalScroll(target3Distance);
+                        }else{
+                            globalScroll(target4Distance);
+                        }
+                    });
+                }(i);
+            }
+            //share
+            var appBtn = document.getElementsByClassName('share-btn')[0];
+            appBtn.addEventListener('click', function (evt) {
+                evt.stopPropagation();
+                var _api;
+                window.share_toWechat_js && window.share_toWechat_js.startShare();
+                (_api = window.ios_share_toWechat_js) && _api.shareGoto();
+            });
+        };
     }();
 </script>
 </body>
