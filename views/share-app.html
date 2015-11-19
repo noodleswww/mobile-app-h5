@@ -130,9 +130,10 @@
             var appBtn = document.getElementsByClassName('share-btn')[0];
             appBtn.addEventListener('click', function (evt) {
                 evt.stopPropagation();
-                var _api;
                 window.share_toWechat_js && window.share_toWechat_js.startShare();
-                (_api = window.ios_share_toWechat_js) && _api.shareGoto();
+                if(shareWX){
+                    shareWX(new Date().valueOf());
+                }
             });
         };
     }();
