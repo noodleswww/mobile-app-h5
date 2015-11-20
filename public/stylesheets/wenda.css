@@ -1,0 +1,220 @@
+html{
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+}
+body{
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+    font-family: 'Helvetica Neue',Helvetica,Arial,'Hiragino Sans GB',STXihei,华文细黑,'Microsoft YaHei',微软雅黑,sans-serif;
+}
+
+header{
+    background-color: #e63214;
+    color: #fff;
+    width: 100%;
+    margin-bottom: 0.24rem;
+    position: fixed;
+}
+#app-h5{
+    padding-bottom: 2rem;
+}
+header h3{
+    text-align: center;
+    display: block;
+    margin: 0;
+    line-height: 3.67rem;
+    font-weight: 100;
+}
+
+.main-img{
+    width: 100%;
+
+}
+.main-img img{
+    width: 1.75rem;
+    height: 1.75rem;
+    position: absolute;
+    top: 1rem;
+    right: 1.25rem;
+}
+.main{
+    margin: 0 1.25rem ;
+    padding-top: .4rem ;
+
+}
+.main h3{
+    display: block;
+    margin: 0;
+    line-height: 2.04rem;
+    font-weight: 100;
+}
+.main p{
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.6rem;
+}
+/*h5页面*/
+.clearfix{
+    clear: both;
+}
+#page-h5 header{
+    background-color: #f2f2f3;
+    color: #7b838e;
+    width: 100%;
+    margin-bottom: 0.24rem;
+    position: fixed;
+}
+#page-h5.main{
+    padding: 4.3rem 0 1rem;
+
+}
+header p{
+    font-size: 1.25rem;
+    margin: 0.83rem 1.25rem ;
+    line-height: 1.67rem;
+}
+.main-name{
+    margin: 1.25rem 0 0.4rem;
+}
+.main-name-img{
+    width: 100%;
+    height: 2rem;
+}
+.main-name-img img{
+    height: 1.92rem;
+    width: 1.92rem;
+    float: left;
+}
+.main-name-img h4{
+    float: left;
+    color: #383d49;
+    font-weight: 100;
+    line-height: 1.92rem;
+    font-size: 1.25rem;
+    vertical-align: middle;
+    padding-left: 0.47rem;
+    margin: 0;
+}
+.content-sidebar{
+    float: left;
+    color: #fff;
+}
+.content-sidebar span{
+    box-sizing: content-box;
+    background-color: #64B3F1;
+    border-radius: 3px;
+    line-height: 1.2rem;
+    width: 1.92rem;
+    height: 1.2rem;
+    font-size: 0.65rem;
+    margin-top: 0.4rem;
+    display: inline-block;
+    text-align: center;
+}
+.content-text{
+    float: right;
+    width: 90%;
+    color: #7B838E;
+
+}
+.content-text p{
+    font-size: 1.25rem;
+    line-height: 2rem;
+    display: inline;
+}
+.content-line{
+    margin: 0 1rem ;
+    padding-top: 1.25rem;
+}
+.content-line span{
+    width: 8.67rem;
+    border-bottom: 1px solid #eee;
+    display: inline-block;
+    margin-bottom: 0.38rem;
+}
+.content-line h4{
+    font-size: 1.08rem;
+    color: #cacaca;
+    width: 6.67rem;
+    font-weight: 100;
+    margin: 0;
+    display: inline-block;
+    text-align: center;
+}
+.line-right{
+    width: 100%;
+    padding: 0.9rem 0 0;
+}
+.line-right span{
+    margin-left: 1.25rem;
+    display: block;
+    border-bottom: 1px solid #EEE;
+}
+.main-bottom{
+    margin: 0 1.25rem ;
+
+}
+.main-bottom h3{
+    display: block;
+    margin: 0;
+    line-height: 2.04rem;
+    font-weight: 100;
+}
+.main-bottom p{
+    margin: 0;
+    font-size: 1.25rem;
+    line-height: 2rem;
+    display: inline;
+}
+.bottom-window{
+    height: 5rem;
+    width: 100%;
+    background-color: #e63214;
+    opacity: .92;
+    position: fixed;
+    bottom: 0;
+
+}
+.bottom-img{
+    float: left;
+    padding: 0.8rem 1rem 0 1.88rem;
+}
+.bottom-img img{
+    height: 3.58rem;
+    width: 3.58rem;
+}
+.bottom-text{
+    float: left;
+    color: #fff;
+
+}
+.bottom-text h3{
+    font-size: 1.42rem;
+    margin: 0px;
+    font-weight: 100;
+    line-height: 1.5rem;
+    padding-top: 1.1rem;
+
+}
+.bottom-text h4{
+    font-size: 1.08rem;
+    margin: 0;
+    font-weight: 100;
+    padding-top: 0.3rem;
+    padding-left: 0.3rem;
+
+}
+.download-app {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+.bottom-x{
+    float: right;
+    padding:0.4rem;
+}
+.bottom-x img{
+    width: 1.75rem;
+    height: 1.75rem;
+}
