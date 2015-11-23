@@ -33,6 +33,10 @@ app.get('/detail', function (req, res) {
 app.get('/wenda', function (req, res) {
   res.sendFile(path.join(__dirname+'/views/wenda.html'));
 });
+app.get('/pie', function (req, res) {
+  res.sendFile(path.join(__dirname+'/views/test.html'));
+
+})
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
