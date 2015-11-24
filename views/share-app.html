@@ -73,7 +73,7 @@
         <p>总结分享总结分享总结分享总结分享总结分享总结分享总结分享总结分享总结分享</p>
     </div>
     <div class="share-wrap">
-        <button class="share-btn">分享微信，立即报名</button>
+        <button class="share-btn" style="-webkit-user-select: none;">分享微信，立即报名</button>
     </div>
 </div>
 <script>
@@ -128,11 +128,22 @@
             }
             //share
             var appBtn = document.getElementsByClassName('share-btn')[0];
-            appBtn.addEventListener('click', function (evt) {
+            /*appBtn.addEventListener('click', function (evt) {
                 evt.stopPropagation();
                 window.share_toWechat_js && window.share_toWechat_js.startShare();
                 if(shareWX){
                     shareWX(new Date().valueOf());
+                }
+            });*/
+            var isClickOk = false;
+            appBtn.addEventListener('click', function (evt) {
+                evt.stopPropagation();
+                window.share_toWechat_js && window.share_toWechat_js.startShare();
+                if (window.shareWX && !isClickOk) {
+                    isClickOk = true;
+                    shareWX(new Date().valueOf());
+                    console.log('click');
+                    isClickOk = false;
                 }
             });
         };
