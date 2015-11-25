@@ -37,7 +37,9 @@ app.get('/wenda', function (req, res) {
 });
 app.get('/pie', function (req, res) {
   res.sendFile(path.join(__dirname + '/views/test.html'));
-
+});
+app.get('/tips', function (req, res) {
+  res.sendFile(path.join(__dirname + '/views/wx-tips.html'));
 });
 app.get('/excel', function (req, res, next) {
   var data = [
