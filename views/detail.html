@@ -73,5 +73,21 @@
         </div>
     </div>
 </div>
+<script>
+    //window.onload = function () {
+        function is_weixin(){
+            var ua = navigator.userAgent.toLowerCase();
+            if(ua.match(/MicroMessenger/i)=="micromessenger") {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        var downloadBanner = document.getElementsByClassName('bottom-window')[0];
+        if(!is_weixin()){
+            downloadBanner.style.display = 'none';
+        }
+    //}
+</script>
 </body>
 </html>
