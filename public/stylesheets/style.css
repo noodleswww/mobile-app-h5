@@ -567,18 +567,17 @@ hr {
     width: 3.58rem;
 }
 .bottom-text{
-    float: left;
     color: #fff;
 }
 .bottom-text h4 {
-    font-size: 1rem;
+    font-size: 14px;
     margin: 0;
     font-weight: 100;
     padding-top: 0.3rem;
     padding-left: 0.3rem;
 }
 .bottom-text h3 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin: 0px;
     font-weight: 100;
     line-height: 1.5rem;
@@ -589,10 +588,20 @@ hr {
     color: #FFFFFF;
 }
 .bottom-x{
-    float:right;
-    padding:0.4rem;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 .bottom-x img {
     width: 1.75rem;
     height: 1.75rem;
+}
+.offline{
+    width:100%;
+}
+.offline-tips{
+    color:red;
+    font-size: 16px;
+    text-align: center;
+    width:100%;
 }

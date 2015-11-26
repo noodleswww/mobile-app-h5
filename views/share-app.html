@@ -78,6 +78,16 @@
 </div>
 <script>
 
+    //share
+    var appBtn = document.getElementsByClassName('share-btn')[0];
+    appBtn.addEventListener('click', function (evt) {
+        evt.stopPropagation();
+        window.share_toWechat_js && window.share_toWechat_js.startShare();
+        if(window.shareWX){
+            shareWX(new Date().valueOf());
+        }
+    });
+
     ~function () {
         window.onload = function () {
             var target1Distance = document.getElementById('target1').offsetTop;
@@ -126,26 +136,6 @@
                     });
                 }(i);
             }
-            //share
-            var appBtn = document.getElementsByClassName('share-btn')[0];
-            /*appBtn.addEventListener('click', function (evt) {
-                evt.stopPropagation();
-                window.share_toWechat_js && window.share_toWechat_js.startShare();
-                if(shareWX){
-                    shareWX(new Date().valueOf());
-                }
-            });*/
-            var isClickOk = false;
-            appBtn.addEventListener('click', function (evt) {
-                evt.stopPropagation();
-                window.share_toWechat_js && window.share_toWechat_js.startShare();
-                if (window.shareWX && !isClickOk) {
-                    isClickOk = true;
-                    shareWX(new Date().valueOf());
-                    console.log('click');
-                    isClickOk = false;
-                }
-            });
         };
     }();
 </script>
